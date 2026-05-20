@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import useDebounce from '../hooks/useDebounce';
 import { motion } from 'framer-motion';
 import './styles/components.css';
 
@@ -7,6 +8,9 @@ const SearchFilter = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedLocation, setSelectedLocation] = useState('all');
   const [priceFilter, setPriceFilter] = useState('all');
+
+  // Debounce the search term to avoid filtering on every keystroke
+  const debouncedSearchTerm = useDebounce(searchTerm, 400);
 
   const categories = [
     { value: 'all', label: 'All Categories' },
@@ -104,8 +108,8 @@ const SearchFilter = () => {
   ];
 
   const filteredEvents = mockEvents.filter(event => {
-    const matchesSearch = event.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         event.description.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesSearch = event.title.toLowerCase().includes(debouncedSearchTerm.toLowerCase()) ||
+                         event.description.toLowerCase().includes(debouncedSearchTerm.toLowerCase());
     const matchesCategory = selectedCategory === 'all' || event.category === selectedCategory;
     const matchesLocation = selectedLocation === 'all' || 
                            event.location.toLowerCase().replace(' ', '-') === selectedLocation;
