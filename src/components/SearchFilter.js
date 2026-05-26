@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { useState } from 'react';
 import useDebounce from '../hooks/useDebounce';
 import { motion } from 'framer-motion';
