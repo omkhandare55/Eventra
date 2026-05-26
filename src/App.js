@@ -1,14 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, lazy, Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 // Layout & Components
 import Navbar from "./components/Layout/Navbar";
-// Lazy load heavy components
-const Footer = lazy(() => import("./components/Layout/Footer"));
-const Chatbot = lazy(() => import("./components/Chatbot"));
-const AppRoutes = lazy(() => import("./components/AppRoutes")); // This is Heaviestt
-
 import ScrollToTop from "./components/ScrollToTop";
 import FeedbackButton from "./components/FeedbackButton";
 import FluidCursor from "./jhalak/FluidCursor";
@@ -23,6 +18,11 @@ import { MyEventsProvider } from "./context/MyEventsContext";
 import { ThemeProvider } from "./context/ThemeContext";
 import { useModelContext } from "./hooks/useModelContext";
 import useOfflineSync from "./hooks/useOfflineSync";
+
+// Lazy load heavy components
+const Footer = lazy(() => import("./components/Layout/Footer"));
+const Chatbot = lazy(() => import("./components/Chatbot"));
+const AppRoutes = lazy(() => import("./components/AppRoutes")); // This is Heaviestt
 
 const OfflineSyncManager = () => {
   useOfflineSync();
@@ -66,17 +66,21 @@ function App() {
             <div className="App">
               <Navbar cursorEnabled={cursorEnabled} toggleCursor={toggleCursor} />
               <main className="relative z-10 min-h-screen bg-white dark:bg-black">
-                <PageTransition>
-                  <Routes>
-                    <Route path="/register/:id" element={<RegistrationPage />} />
-                    <Route path="*" element={<AppRoutes />} />
-                  </Routes>
-                </PageTransition>
+                <Suspense fallback={<div className="min-h-screen flex items-center justify-center bg-white dark:bg-black text-gray-800 dark:text-gray-200">Loading...</div>}>
+                  <PageTransition>
+                    <Routes>
+                      <Route path="/register/:id" element={<RegistrationPage />} />
+                      <Route path="*" element={<AppRoutes />} />
+                    </Routes>
+                  </PageTransition>
+                </Suspense>
               </main>
               <ScrollToTop />
-              <Chatbot />
+              <Suspense fallback={null}>
+                <Chatbot />
+                <Footer />
+              </Suspense>
               <FeedbackButton />
-              <Footer />
               <FluidCursor enabled={cursorEnabled} />
             </div>
           </Router>

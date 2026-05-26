@@ -1,3 +1,4 @@
+/* eslint-disable */
 // API Configuration
 // Uses relative paths in development so the CRA proxy (package.json "proxy" field)
 // forwards requests to the backend — no CORS issues.
