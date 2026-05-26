@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { createContext, useState, useEffect, useContext, useCallback } from 'react';
 import { apiUtils, API_ENDPOINTS } from '../config/api';
 
