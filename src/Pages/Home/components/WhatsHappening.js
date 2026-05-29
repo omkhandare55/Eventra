@@ -188,7 +188,7 @@ dark:from-slate-950 dark:via-slate-900 dark:to-black
 text-slate-900 dark:text-gray-100 
 border-t border-gray-100 dark:border-slate-800/80"
     >
-      <div className="relative z-[50] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div
           className="text-center mb-8 sm:mb-12"
@@ -291,7 +291,7 @@ border-t border-gray-100 dark:border-slate-800/80"
                 animate="center"
                 exit="exit"
                 transition={{ duration: prefersReducedMotion ? 0 : 0.4, ease: "easeInOut" }}
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pointer-events-auto relative z-[50]"
+                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pointer-events-auto relative z-10"
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={0.2}

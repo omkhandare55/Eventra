@@ -277,17 +277,14 @@ border-b border-gray-100 dark:border-slate-900">
       <motion.div 
         className="mx-auto px-6 lg:px-8 relative z-10 pt-20"
        style={{
-  backgroundImage: isDark
-    ? "url('/background-dark.png')"
-    : "url('/background.png')",
+          backgroundImage: isDark
+            ? "url('/background-dark.png')"
+            : "url('/background.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           minHeight: "100vh",
           width: "100%",
-           y: (isTouch || prefersReducedMotion) ? 0 : yText,
-          opacity: isTouch ? 1 : opacityHero,
-          willChange: "transform, opacity",
         }}
       >
         <motion.div
@@ -295,6 +292,11 @@ border-b border-gray-100 dark:border-slate-900">
           variants={container}
           initial="hidden"
           animate={controls}
+          style={{
+            y: (isTouch || prefersReducedMotion) ? 0 : yText,
+            opacity: isTouch ? 1 : opacityHero,
+            willChange: "transform, opacity",
+          }}
           data-aos="zoom-in"
           data-aos-once="true"
           data-aos-duration="1000"

@@ -8,7 +8,7 @@ export default function CTASection() {
       {/* Main CTA Section */}
       <section className="relative py-16 bg-gray-50 dark:bg-slate-900/50 rounded-lg overflow-hidden border border-gray-200 dark:border-slate-800 shadow-sm">
         {/* CTA Content Wrapper */}
-        <div className="relative z-[50] max-w-7xl mx-auto text-center px-6">
+        <div className="relative z-10 max-w-7xl mx-auto text-center px-6">
           {/* Tag-style subheading */}
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
@@ -61,7 +61,7 @@ export default function CTASection() {
             -------------------------- */}
             <Link
               to="/hackathons"
-              className="inline-flex items-center justify-center gap-2 z-[50] bg-blue-600 dark:bg-blue-500 text-white px-8 py-3.5 rounded-full font-semibold shadow-lg shadow-blue-500/30 hover:bg-blue-700 dark:hover:bg-blue-400 hover:scale-105 hover:shadow-blue-500/50 transition-all duration-300 ease-out"
+              className="inline-flex items-center justify-center gap-2 z-10 bg-blue-600 dark:bg-blue-500 text-white px-8 py-3.5 rounded-full font-semibold shadow-lg shadow-blue-500/30 hover:bg-blue-700 dark:hover:bg-blue-400 hover:scale-105 hover:shadow-blue-500/50 transition-all duration-300 ease-out"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -89,7 +89,7 @@ export default function CTASection() {
             -------------------------- */}
             <Link
               to="/about"
-              className="inline-flex items-center justify-center z-[50] gap-2 bg-white dark:bg-slate-800 text-gray-900 dark:text-white px-8 py-3.5 rounded-full font-semibold shadow-lg border border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-700 hover:scale-105 hover:border-blue-200 dark:hover:border-blue-800 transition-all duration-300 ease-out"
+              className="inline-flex items-center justify-center z-10 gap-2 bg-white dark:bg-slate-800 text-gray-900 dark:text-white px-8 py-3.5 rounded-full font-semibold shadow-lg border border-gray-200 dark:border-slate-700 hover:bg-gray-50 dark:hover:bg-slate-700 hover:scale-105 hover:border-blue-200 dark:hover:border-blue-800 transition-all duration-300 ease-out"
             >
               Know us better
               <Sparkles className="w-5 h-5 text-blue-500" />

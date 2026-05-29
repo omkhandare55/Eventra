@@ -731,7 +731,7 @@ const MobileDrawer = ({ isOpen, drawerRef, openDropdown, setOpenDropdown, closeA
           onTouchStart={handleTouchStart}
           onTouchMove={handleTouchMove}
           onTouchEnd={handleTouchEnd}
-          className="fixed inset-y-0 right-0 h-dvh overflow-y-auto w-[88vw] max-w-[20rem] sm:max-w-sm shadow-2xl z-50 flex flex-col bg-white backdrop-blur-lg dark:bg-gray-900/95"
+          className="fixed inset-y-0 right-0 h-dvh overflow-y-auto w-[88vw] max-w-[20rem] sm:max-w-sm shadow-2xl z-[110] flex flex-col bg-white backdrop-blur-lg dark:bg-gray-900/95"
           role="dialog"
           aria-modal="true"
           initial={{ x: "100%" }}
@@ -910,7 +910,7 @@ const Navbar = ({ cursorEnabled, toggleCursor }) => {
         Skip to main content
       </a>
       <div
-        className={`fixed inset-0 z-30 transition-opacity duration-300 ${
+        className={`fixed inset-0 z-[90] transition-opacity duration-300 ${
           isMobileMenuOpen || showLogoutModal
             ? "bg-black/60 opacity-100"
             : showProfileDropdown || openDropdown
@@ -926,7 +926,7 @@ const Navbar = ({ cursorEnabled, toggleCursor }) => {
         data-aos="fade-down"
         data-aos-once="true"
         data-aos-duration="1000"
-        className="fixed top-0 left-0 w-full z-40 shadow-sm bg-white/85 dark:bg-zinc-950/85 backdrop-blur-md border-b border-zinc-200/50 dark:border-zinc-800/50 transition-colors duration-300 overflow-visible"
+        className="fixed top-0 left-0 w-full z-[100] shadow-sm bg-white/85 dark:bg-zinc-950/85 backdrop-blur-md border-b border-zinc-200/50 dark:border-zinc-800/50 transition-colors duration-300 overflow-visible"
       >
         <div className="neon-navbar-border"></div>
 
